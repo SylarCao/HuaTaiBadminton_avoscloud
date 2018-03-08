@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Todo</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script type="text/javascript"  src="/angular/angular.js"></script>
+    <script type="text/javascript"  src="/angular_file/angular_test1.js"></script>
+  </head>
+  <body ng-app="an_test1">
+     <div ng-controller="controller1">
+<!-- 
+    <div ng-controller="controller1">
+      <br/><hr/>
+      <h4> angular js  test </h4>
+
+      <h5> var1 = {{var1}} </h5>
+
+      <h5> todo = <%= todo %> </h5>
+
+      <input type="submit" value="test1" class="btn_add_people" ng-click='test1("<%= todo %>")'/> -->
+
+      <form action="/test1" method="POST">
+      <input type="text" name="input_name" />
+      <input type="submit" value="新增" />
+    </form>
+
+
+    <hr/>
+<!--     <input type="text" name="content" />
+
+
+    <form action="/test1" method="POST">
+      <input  type="submit" value="123"/> 
+    </form> -->
+    <hr/>
+
+    <h1> 添加人员 </h1>
+
+    <form action="/test1/addPeople" method="POST">
+      <div style="margin: 20px;"> 
+        <span style= "width: 120px; display: inline-block;">
+          <h5 class="text_input_description">名字</h5>
+        </span>
+        <span>
+           <input type="text" class="text_input_name" name="input_name"/>
+        </span>
+      </div>
+      <div style="margin: 20px;"> 
+        <span style= "width: 120px; display: inline-block;">
+          <h5 class="text_input_description">初始金额</h5>
+        </span>
+        <span>
+           <input type="text" class="text_input_name" name="input_money"/>
+        </span>
+      </div>
+      <div>
+        <input type="submit" value="增加" class="btn_add_people"/>
+      </div>
+
+    </form>
+
+
+    <br/>
+    <hr/>
+
+      <h2> 成员列表 </h2>
+
+      <h4> 人数 = <%= people.length %>  </h4> 
+
+
+      {{test2("<%= people %> ")}}
+
+      <ul>
+        <% for(var i=0; i<people.length; i++) {%>
+
+          <li> data = {{test3(<%= people %>)}}         </li>
+
+
+        <% } %>
+
+
+      </ul>
+
+
+      <br/><hr/>
+
+      <h1> 下拉菜单 </h1>
+      <select name='select_name' style='width:58px' onchange=''>
+        <% for(var i=0; i<people.length; i++) {%>
+          <option value="  <%= people[i].get('uid') %>  ">  <%= people[i].get('name') %>          </option>
+
+        <% } %>
+      </select>
+
+
+    </div>
+
+    <br/><br/>
+
+    <h1> 表格 </h1>
+
+    <table class="dataintable">
+      <tr>
+        <th>Month</th>
+        <th>Savings</th>
+      </tr>
+      <tr>
+        <td>January</td>
+        <td>$100</td>
+      </tr>
+      <tr>
+        <td>March</td>
+        <td>$100</td>
+      </tr>
+      <tr>
+        <td>April</td>
+        <td>$100</td>
+      </tr>
+    </table>
+
+
+
+
+</div>
+  </body>
+</html>
+
+

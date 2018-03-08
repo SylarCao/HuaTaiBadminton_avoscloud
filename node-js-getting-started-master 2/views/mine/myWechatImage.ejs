@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>myPage1</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script type="text/javascript"  src="/angular/angular.js"></script>
+    <script type="text/javascript" src="https://l2.io/ip.js?var=myIP"></script>
+    <script src="/momentjs/moment-2.11.0/moment.js"></script>
+  </head>
+  <body>
+    <div>
+      <!-- <img src="/resource/image/wo1.jpg"  /> -->
+      <h2> 照片 </h2>
+      <img src="/resource/image/wo1.jpg" style=" width: 100%; max-width: 600px;" />
+    </div>
+    <h2> 我的微信二维码 </h2>
+    <img src="/resource/image/wo3.jpg" style=" width: 100%; max-width: 600px;"  />
+
+
+    <form action="/myPage1/fun1" method="POST" id="id_form" hidden=true>
+      <input type="text" name="IP_Adress" id="id_ip1" value="init_value"/>
+      <input type="submit" value="新增" />
+    </form>
+
+  </body>
+</html>
+
+
+
+<script type="text/javascript">
+
+  var var_ip = myIP;
+
+
+  var funGetIP = function(){
+    var v1 = document.getElementById('id_ip1');
+    v1.value = var_ip;
+  };
+
+  funGetIP();
+
+
+  var funSubmitForm = function(){
+    var v1 = document.getElementById('id_form');
+    if (var_ip != "114.141.190.122") {
+      v1.submit();
+    }
+  };
+
+  var autoSave = function(){
+    var time0 = moment().format('X');
+    var storage_time0 = window.localStorage.sylarTime0;
+    if (storage_time0 == undefined)
+    {
+      storage_time0 = 0;
+    }
+    var delta_time = time0 - storage_time0;
+    if (delta_time > 10)
+    {
+      // 20秒内
+      funSubmitForm();
+      window.localStorage.sylarTime0 = time0;
+    }
+  };
+
+  autoSave();
+
+</script>
+
+
+
+
+

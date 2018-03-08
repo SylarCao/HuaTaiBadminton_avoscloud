@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Member</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script type="text/javascript"  src="/angular/angular.js"></script>
+  </head>
+  <body>
+
+    <h1>  充值  </h1>
+
+    <form action="/addMoney/addMoney" method="POST">
+      <div>  
+        <span>
+          <select name='select_player' required="required">
+            <% for(var i=0; i<people.length; i++) {%>
+              <option value="  <%= people[i].get('uid') %>  ">  <%= people[i].get('name') %>          </option>
+            <% } %>
+          </select>
+        </span>
+
+        <span>
+          <input type="text" class="text_input_name" placeholder="输入充值金额" name="input_money"/>
+        </span>
+
+        <span>
+          <input type="submit" value="增加" class="btn_add_people"/>
+        </span>
+
+      </div>
+
+    </form>
+
+
+    <br/><hr/>
+
+    <h1> 打羽毛球 </h1>
+
+
+    <br/><hr/>
+    <h1>  买水  </h1>
+
+    <br/><hr/>
+    <h1>  其他  </h1>
+
+  </body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+

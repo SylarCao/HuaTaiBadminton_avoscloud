@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Member</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+
+  	 <h1> 添加人员 </h1>
+
+    <form action="/member/addPeople" method="POST">
+      <div style="margin: 20px;"> 
+        <span style= "width: 120px; display: inline-block;">
+          <h5 class="text_input_description">名字</h5>
+        </span>
+        <span>
+           <input type="text" class="text_input_name" name="input_name"/>
+        </span>
+      </div>
+      <div style="margin: 20px;"> 
+        <span style= "width: 120px; display: inline-block;">
+          <h5 class="text_input_description">初始金额</h5>
+        </span>
+        <span>
+           <input type="text" class="text_input_name" name="input_money"/>
+        </span>
+      </div>
+      <div>
+        <input type="submit" value="增加" class="btn_add_people"/>
+      </div>
+
+    </form>
+
+    <br/><hr/>
+
+    <h1> 目前人员 </h1>
+
+    <ul>
+        <% for(var i=0; i<people.length; i++) {%>
+
+          <li> <h3> <%= people[i].get('name') %>   </h3>   </li>
+
+
+        <% } %>
+
+
+    </ul>
+
+
+  </body>
+
+
+</html>
